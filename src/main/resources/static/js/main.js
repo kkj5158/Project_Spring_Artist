@@ -3,7 +3,7 @@
 
 // 클릭시에 아티스트 팬명록 페이지로의 이동 
 $(document).ready(function () {
-  $(document).on("click", ".namebox", function () {
+  $(document).on("click", ".artist_name_box", function () {
     // alert('클릭됨');
 
     var artist_id_num = $(this).attr("id");

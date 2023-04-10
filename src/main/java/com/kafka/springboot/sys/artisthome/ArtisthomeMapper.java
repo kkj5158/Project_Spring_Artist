@@ -1,4 +1,4 @@
-package com.kafka.springboot.sys.main;
+package com.kafka.springboot.sys.artisthome;
 
 import com.kafka.springboot.sqlmap.model.dto.Artist;
 import org.apache.ibatis.annotations.Mapper;
@@ -8,6 +8,9 @@ import java.util.List;
 
 @Repository
 @Mapper
-public interface MainMapper {
+public interface ArtisthomeMapper {
+
+    Artist getArtistinfobyid(int artistid);
     List<Artist> getAllArtistinfo();
+
 }

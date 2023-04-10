@@ -1,12 +1,12 @@
 package com.kafka.springboot.sys.main;
 
-import com.kafka.springboot.sqlmap.model.dto.artist;
+import com.kafka.springboot.sqlmap.model.dto.Artist;
 
 import java.util.List;
 
 
 public interface MainService {
 
-    public List<artist> getAllArtistinfo();
+    public List<Artist> getAllArtistinfo();
 
 }
