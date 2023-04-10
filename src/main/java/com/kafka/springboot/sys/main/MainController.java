@@ -16,11 +16,17 @@ public class MainController {
     private final MainService mainService;
 
     @GetMapping("/main")
-    public List<artist> main() {
+    public ModelAndView main(ModelAndView mv, HttpServletRequest req) {
 
-        System.out.println("dfdfddd");
-        return mainService.getAllArtistinfo();
+        mv.setViewName("main/main");
 
+        System.out.println("메인 컨트롤러 진입");
+
+        List<artist> artistList = mainService.getAllArtistinfo();
+
+        mv.addObject("artistList", artistList);
+
+        return mv;
 
     }
 

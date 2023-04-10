@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html xmlns:th="http://www.thymeleaf.org"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link
@@ -16,10 +15,12 @@
           crossorigin="anonymous"
   ></script>
   <link rel="stylesheet" href="/css/index.css" />
-  <script src="/js/index.js"> </script>
+  <script src="/js/main.js"> </script>
 
 
   <title>아티스트 랭킹</title>
+
+
 
 </head>
 <body>
@@ -36,7 +37,7 @@
     <table class="table">
       <thead>
       <tr>
-        <th scope="col">사진</th>
+        <th scope="col">사진`1</th>
         <th scope="col">순위</th>
         <th scope="col">이름</th>
         <th scope="col">팬 수</th>
@@ -44,6 +45,13 @@
       </tr>
       </thead>
       <tbody id="artists-ranking">
+      <tr th:each="artist : ${artistList}">
+        <td><img th:src="${artist.image_url}" alt="artist_img"></td>
+        <td th:text="${artist.rank}">rank</td>
+        <td th:text="${artist.name}">name</td>
+        <td th:text="${artist.fan_num}">fan_num</td>
+        <td th:text="${artist.score}">score</td>
+      </tr>
       <tr></tr>
       </tbody>
     </table>
