@@ -8,10 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RequiredArgsConstructor
 @RestController
-public class LoginController {
-    @GetMapping("/login")
+public class IndexController {
+    @GetMapping("/")
     public ModelAndView main(ModelAndView mv, HttpServletRequest req) {
-        mv.setViewName("login/login");
+        mv.setViewName("index");
 
         return mv;
     }

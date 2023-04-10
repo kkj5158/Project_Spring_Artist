@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class artist {
+public class Artist {
     private int id;
     private String name;
     private int fan_num;

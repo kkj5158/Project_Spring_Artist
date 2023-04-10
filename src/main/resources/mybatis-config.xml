@@ -4,5 +4,6 @@
 <configuration>
     <mappers>
         <mapper resource="main.xml"/>
+        <mapper resource="artisthome.xml"/>
     </mappers>
 </configuration>
