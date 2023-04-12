@@ -35,7 +35,7 @@
       </thead>
       <tbody id="artists-ranking">
       <tr th:each="artist : ${artistList}">
-        <td><img class="main_img" alt="artist_img" th:src="${artist.image_url}"></td>
+        <td><img class="main_img" alt="artist_img" th:src="${artist.ima_url}"></td>
         <td th:text="${artist.rank}">rank</td>
         <td class="artist_name_box" th:text="${artist.name}" th:id="${artist.id}">name</td>
         <td th:text="${artist.fan_num}">fan_num</td>

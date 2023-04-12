@@ -14,6 +14,6 @@ public class Artist {
     private String name;
     private int fan_num;
     private int score;
-    private String image_url;
+    private String ima_url;
     private int rank;
 }
