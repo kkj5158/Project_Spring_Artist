@@ -36,4 +36,16 @@ public class ArtisthomeController {
 
     }
 
+    @GetMapping("/artist/id")
+    public Artist getArtistbyid(ModelAndView mv, HttpServletRequest req) {
+
+        String artistid = req.getParameter("artist_id_num");
+        int artist_id = Integer.parseInt(artistid);
+
+        Artist artistinfo = artisthomeService.getartistinfobyid(artist_id);
+
+        return artistinfo;
+
+    }
+
 }

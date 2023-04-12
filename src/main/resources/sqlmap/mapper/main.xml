@@ -5,7 +5,7 @@
 
 <mapper namespace="com.kafka.springboot.sys.main.MainMapper">
 
-    <select id="getAllArtistinfo" resultType="artist">
+    <select id="getAllArtistinfo" resultType="artist" >
         SELECT * FROM artist
         order by `rank`;
     </select>

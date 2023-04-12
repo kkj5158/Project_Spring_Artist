@@ -21,16 +21,19 @@ public class MainController {
 
         System.out.println("메인 컨트롤러 진입");
 
-        System.out.println("메인 컨트롤러 진입");
-
-
-
         List<Artist> artistList = mainService.getAllArtistinfo();
 
         mv.addObject("artistList", artistList);
 
         return mv;
 
+    }
+
+    @GetMapping("/artists")
+    public List<Artist> getArtists(HttpServletRequest req){
+        List<Artist> artistList = mainService.getAllArtistinfo();
+
+        return artistList;
     }
 
 }
