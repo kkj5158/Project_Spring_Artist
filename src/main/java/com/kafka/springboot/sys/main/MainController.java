@@ -24,6 +24,7 @@ public class MainController {
         System.out.println("메인 컨트롤러 진입");
 
 
+
         List<Artist> artistList = mainService.getAllArtistinfo();
 
         mv.addObject("artistList", artistList);
