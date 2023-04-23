@@ -5,8 +5,9 @@ import com.kafka.springboot.sqlmap.model.dto.Comment;
 import com.kafka.springboot.sys.artisthome.ArtisthomeService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.apache.ibatis.annotations.Delete;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 @RestController
 public class ArtisthomeController {
     private final ArtisthomeService artisthomeService;
+
     @GetMapping("/artist")
     public ModelAndView main(ModelAndView mv, HttpServletRequest req) {
 
@@ -49,11 +51,28 @@ public class ArtisthomeController {
 
     }
 
-    @GetMapping("/artist/comment") //전체 comment 읽기
-    public List<Comment> getComment(HttpServletRequest req){
-        List<Comment> commentList = artisthomeService.getAllComment();
+    @GetMapping("/artist/comment/{artist_id}") //artist_id에 대한 comment 읽기
+    public List<Comment> getComment(@PathVariable int artist_id){
+        List<Comment> commentList = artisthomeService.getArtistComment(artist_id);
 
         return commentList;
     }
+
+    @PostMapping("/artist/comment") //전체 comment 읽기
+    public void createComment(@RequestBody Comment comment){
+        artisthomeService.createComment(comment);
+    }
+
+    @PutMapping("/artist/comment")
+    public void modifyComment(@RequestBody Comment comment) {
+        artisthomeService.modifyComment(comment);
+    }
+
+    @DeleteMapping("/artist/comment/{id}")
+    ResponseEntity<String> deleteComment(@PathVariable int id) {
+        artisthomeService.deleteComment(id);
+        return ResponseEntity.ok("Comment with ID " + id + " 댓글이 삭제되었습니다");
+    }
+    //jwt 적용, 게시물 페이징
 
 }
