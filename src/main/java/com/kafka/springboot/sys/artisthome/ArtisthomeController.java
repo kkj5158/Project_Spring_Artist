@@ -1,6 +1,7 @@
 package com.kafka.springboot.sys.main;
 
 import com.kafka.springboot.sqlmap.model.dto.Artist;
+import com.kafka.springboot.sqlmap.model.dto.Comment;
 import com.kafka.springboot.sys.artisthome.ArtisthomeService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -46,6 +47,13 @@ public class ArtisthomeController {
 
         return artistinfo;
 
+    }
+
+    @GetMapping("/artist/comment") //전체 comment 읽기
+    public List<Comment> getComment(HttpServletRequest req){
+        List<Comment> commentList = artisthomeService.getAllComment();
+
+        return commentList;
     }
 
 }

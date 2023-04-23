@@ -1,6 +1,7 @@
 package com.kafka.springboot.sys.artisthome;
 
 import com.kafka.springboot.sqlmap.model.dto.Artist;
+import com.kafka.springboot.sqlmap.model.dto.Comment;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,11 @@ public class ArtisthomeServiceImpl implements ArtisthomeService {
         List<Artist> artistList = artisthomeMapper.getAllArtistinfo();
 
         return artistList;
+    }
+
+    public List<Comment> getAllComment() { //전체 comment 읽기
+        List<Comment> commentList = artisthomeMapper.getAllComment();
+
+        return commentList;
     }
 }
