@@ -15,9 +15,29 @@
         where id = ${artistid}
     </select>
 
-    <select id="getAllComment" resultType="Comment" >
+    <select id="getIdComment" resultType="Comment" parameterType="int">
         SELECT * FROM Comment
+        where id = ${id}
+    </select>
+
+    <select id="getArtistComment" resultType="Comment" parameterType="int">
+        SELECT * FROM Comment
+        where artist_id = ${artistid}
         order by `id`;
     </select>
 
+    <insert id="createComment" parameterType="Comment">
+        INSERT INTO comment(comment, like_count, created_at,updated_at, user_id, artist_id)
+        VALUES(#{comment}, #{like_count}, NOW(), NOW(), #{user_id}, #{artist_id})
+    </insert>
+
+    <update id="modifyComment" parameterType="Comment">
+        UPDATE comment
+        SET comment = #{comment},
+            updated_at = NOW()
+        WHERE id = #{id}
+    </update>
+    <delete id="deleteComment" parameterType="Comment">
+        DELETE FROM comment WHERE id = #{id}
+    </delete>
 </mapper>
