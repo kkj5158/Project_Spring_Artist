@@ -15,4 +15,9 @@
         where id = ${artistid}
     </select>
 
+    <select id="getAllComment" resultType="Comment" >
+        SELECT * FROM Comment
+        order by `id`;
+    </select>
+
 </mapper>
