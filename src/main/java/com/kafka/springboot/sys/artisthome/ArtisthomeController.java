@@ -1,4 +1,4 @@
-package com.kafka.springboot.sys.main;
+package com.kafka.springboot.sys.artisthome;
 
 import com.kafka.springboot.sqlmap.model.dto.Artist;
 import com.kafka.springboot.sqlmap.model.dto.Comment;
