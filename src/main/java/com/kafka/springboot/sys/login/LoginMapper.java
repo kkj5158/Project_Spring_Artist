@@ -10,7 +10,11 @@ import org.springframework.stereotype.Repository;
 public interface LoginMapper {
     int insertuser(User user);
 
-    int getId(User user);
+    int getIdcnt(User user);
 
-    int getEmail(User user);
+    User getUserbyid(User user);
+
+    int getEmailcnt(User user);
+
+
 }

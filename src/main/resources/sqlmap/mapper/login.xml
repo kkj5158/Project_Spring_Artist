@@ -5,11 +5,15 @@
 
 <mapper namespace="com.kafka.springboot.sys.login.LoginMapper">
     
-    <select id="getId" parameterType="User" resultType="int">
+    <select id="getIdcnt" parameterType="User" resultType="int">
         SELECT count(*) FROM user where user_id= #{user_id}
     </select>
 
-    <select id="getEmail" parameterType="User" resultType="int">
+    <select id="getUserbyid" parameterType="User" resultType="User">
+        SELECT * FROM user where user_id= #{user_id}
+    </select>
+
+    <select id="getEmailcnt" parameterType="User" resultType="int">
         SELECT count(*) FROM user where email = #{email}
     </select>
 
