@@ -11,8 +11,11 @@
         <button class="btn btn-outline-dark" onclick="location.href='/main'" type="button">
             Home
         </button>
-        <button class="btn btn-outline-dark" onclick="location.href='/login'" type="button">
-            Login
+        <div class="profile_box">
+            <div class="name_box" th:text="${username}"> username 님 환영합니다.</div>
+        </div>
+        <button class="btn btn-outline-dark" onclick="location.href='/user'" type="button">
+            Logout
         </button>
     </div>
 </nav>
