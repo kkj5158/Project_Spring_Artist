@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -50,4 +51,9 @@ public class ArtisthomeServiceImpl implements ArtisthomeService {
         return artisthomeMapper.getIdComment(id);
     }
 
+
+    //페이징
+    public List<Artist> selectPage(Map map) {
+        return artisthomeMapper.findPage(map);
+    }
 }

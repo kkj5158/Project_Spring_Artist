@@ -40,4 +40,15 @@
     <delete id="deleteComment" parameterType="Comment">
         DELETE FROM comment WHERE id = #{id}
     </delete>
+
+    <!-- 페이징 게시글 리스트 조회 -->
+    <select id="findPage" parameterType="map" resultType="artist">
+        SELECT * FROM artist
+        order by `rank`
+        LIMIT #{offset}, #{pageSize};
+    </select>
+
+
+
+
 </mapper>

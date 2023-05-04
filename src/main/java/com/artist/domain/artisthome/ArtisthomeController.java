@@ -1,3 +1,4 @@
+
 package com.artist.domain.artisthome;
 
 import com.artist.model.dto.Artist;
@@ -5,10 +6,13 @@ import com.artist.model.dto.Comment;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RequiredArgsConstructor
 @RestController
@@ -29,7 +33,6 @@ public class ArtisthomeController {
         System.out.println(artist_id);
 
         Artist artistinfo = artisthomeService.getartistinfobyid(artist_id);
-
 
         mv.addObject("artistinfo", artistinfo);
 
@@ -73,4 +76,19 @@ public class ArtisthomeController {
     }
     //jwt 적용, 게시물 페이징
 
+
+    //전체 게시물 대상 10개씩 페이징
+    @GetMapping("/artistPage")
+    public ResponseEntity<List<Artist>> list(int page, int pageSize, Model m, HttpServletRequest request) {
+        Map map = new HashMap();
+        // page = 3, pageSize =10 -> offset = 20 이므로
+        // 21번째 게시물부터 10개를 출력
+        map.put("offset", (page-1)*pageSize);
+        map.put("pageSize", pageSize);
+        List <Artist> list=artisthomeService.selectPage(map);
+
+        m.addAttribute("list", list);
+
+        return ResponseEntity.ok().body(list);
+    }
 }

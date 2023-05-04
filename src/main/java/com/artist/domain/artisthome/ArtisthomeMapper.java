@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 @Mapper
@@ -20,5 +21,11 @@ public interface ArtisthomeMapper {
     void modifyComment(Comment comment);
 
     void deleteComment(int id);
+
+//
+//     * 게시글 리스트 조회
+//     * @return 게시글 리스트
+    List<Artist> findPage(Map map);
+
 
 }
