@@ -6,5 +6,9 @@ import org.springframework.http.ResponseEntity;
 
 public interface LoginService {
     void register(User userdto);
-    void login(User userdto, HttpServletResponse response);
+
+    void login(User userdto);
 }
+
+
+
