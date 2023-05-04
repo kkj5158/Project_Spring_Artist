@@ -2,9 +2,9 @@ package com.kafka.springboot.sys.artisthome;
 
 import com.kafka.springboot.sqlmap.model.dto.Artist;
 import com.kafka.springboot.sqlmap.model.dto.Comment;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ArtisthomeService {
 
@@ -19,4 +19,5 @@ public interface ArtisthomeService {
 
     public void modifyComment(Comment comment);
     public void deleteComment(int id);
+    public List<Artist> selectPage(Map map);
 }

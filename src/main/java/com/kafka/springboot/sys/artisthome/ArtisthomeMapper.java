@@ -3,10 +3,10 @@ package com.kafka.springboot.sys.artisthome;
 import com.kafka.springboot.sqlmap.model.dto.Artist;
 import com.kafka.springboot.sqlmap.model.dto.Comment;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 @Mapper
@@ -21,5 +21,11 @@ public interface ArtisthomeMapper {
     void modifyComment(Comment comment);
 
     void deleteComment(int id);
+
+//
+//     * 게시글 리스트 조회
+//     * @return 게시글 리스트
+    List<Artist> findPage(Map map);
+
 
 }

@@ -3,11 +3,10 @@ package com.kafka.springboot.sys.artisthome;
 import com.kafka.springboot.sqlmap.model.dto.Artist;
 import com.kafka.springboot.sqlmap.model.dto.Comment;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -52,4 +51,9 @@ public class ArtisthomeServiceImpl implements ArtisthomeService {
         return artisthomeMapper.getIdComment(id);
     }
 
+
+    //페이징
+    public List<Artist> selectPage(Map map) {
+        return artisthomeMapper.findPage(map);
+    }
 }
