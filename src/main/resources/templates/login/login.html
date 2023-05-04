@@ -23,34 +23,28 @@
 </head>
 <body>
 
-<nav th:replace="~{nav :: navbar}">
-
-</nav>
-
-
 <div class="container">
   <div class="welcome">
     <div class="pinkbox">
       <div class="signup nodisplay">
         <h1>register</h1>
-        <form autocomplete="off">
-          <input type="text" placeholder="username">
-          <input type="email" placeholder="email">
-          <input type="password" placeholder="password">
-          <input type="password" placeholder="confirm password">
-          <button class="page_button submit">create account </button>
+        <form autocomplete="off" action="/user/signup" method="post">
+            <input type="text" name="name" placeholder="name">
+            <input type="email" name="email" placeholder="email">
+          <input type="text" name="username" placeholder="username">
+            <input type="password" name="pw" placeholder="pw">
+          <button type="submit" class="page_button submit">create account </button>
         </form>
       </div>
       <div class="signin">
         <h1>sign in</h1>
-        <form class="more-padding" autocomplete="off">
-          <input type="text" placeholder="username">
-          <input type="password" placeholder="password">
+        <form class="more-padding" action="/user/login"   method="post" autocomplete="off">
+          <input type="text"  name="username" placeholder="username">
+          <input type="password"  name="pw" placeholder="pw">
           <div class="checkbox">
             <input type="checkbox" id="remember" /><label for="remember">remember me</label>
           </div>
-
-          <button class="page_button submit">login</button>
+          <button type="submit" class="page_button submit">login</button>
         </form>
       </div>
     </div>

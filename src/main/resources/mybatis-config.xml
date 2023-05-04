@@ -6,6 +6,5 @@
         <mapper resource="main.xml"/>
         <mapper resource="artisthome.xml"/>
         <mapper resource="login.xml"/>
-
     </mappers>
 </configuration>

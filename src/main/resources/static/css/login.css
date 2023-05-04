@@ -113,7 +113,7 @@ span {
   opacity: 0.9;
 }
 
-.page_button {
+button {
   padding: 12px;
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
@@ -171,7 +171,7 @@ input {
   color: #ce7d88;
   border: none;
   border-bottom: 1px solid rgba(246, 246, 246, 0.5);
-  padding: 9px;
+  padding: 7px;
   margin: 7px;
 }
 input::placeholder {
